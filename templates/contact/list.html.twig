@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h3>List of contacts</h3>
+    {% if contacts is empty %}
+        <p>There are no contacts to show yet.</p>
+    {% else %}
+        <table>
+            <tr>
+                <th>Full name</th>
+                <th>Telephone</th>
+                <th>Email</th>
+                <th>Note</th>
+            </tr>
+            {% for contact in contacts %}
+                <tr>
+                    <td>{{ contact.fullName }}</td>
+                    <td>{{ contact.telephone }}</td>
+                    <td>{{ contact.email }}</td>
+                    <td>{{ contact.note }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+{% endblock %}

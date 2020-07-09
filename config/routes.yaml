@@ -1,3 +1,16 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+list_contacts:
+    path: /
+    controller: App\Controller\ContactController::list
+    methods: GET|POST
+add_contact:
+    path: /add
+    controller: App\Controller\ContactController::add
+    methods: GET|POST
+edit_contact:
+    path: /{slug}
+    controller: App\Controller\ContactController::edit
+    methods: GET|POST
+delete_contact:
+    path: /delete/{id}
+    controller: App\Controller\ContactController::delete
+    methods: GET|DELETE
